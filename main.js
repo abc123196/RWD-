@@ -5,8 +5,8 @@
 // 只要把這裡改成後端網址，例如：
 //   const API_BASE_URL = "https://your-backend.example.com/api";
 // 後端需提供兩個端點：
-//   GET {API_BASE_URL}/news         -> 回傳與 data/news.json 相同格式的陣列
-//   GET {API_BASE_URL}/chart-data   -> 回傳與 data/chart-data.json 相同格式的物件
+//   GET {API_BASE_URL}/news         -> 回傳與 news.json 相同格式的陣列
+//   GET {API_BASE_URL}/chart-data   -> 回傳與 chart-data.json 相同格式的物件
 // 前端其餘程式碼完全不需要修改。
 // ---------------------------------------------------------------
 const API_BASE_URL = null;
