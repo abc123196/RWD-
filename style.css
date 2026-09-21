@@ -1,0 +1,208 @@
+:root {
+  --bg: #0F2A2E;
+  --bg-alt: #163B3F;
+  --surface: #1B4247;
+  --line: #2E5A5E;
+  --text: #EDE8DE;
+  --text-muted: #A9BFBD;
+  --accent: #C9A66B;
+  --accent-soft: #8FA998;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: "Fraunces", "Noto Serif TC", serif;
+  margin: 0;
+  font-weight: 600;
+}
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  padding: 2.5rem 1.5rem 1.75rem;
+}
+
+.masthead-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.masthead h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.01em;
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.today {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--accent-soft);
+}
+
+.layout {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  font-size: 1.25rem;
+}
+
+.section-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* 最新消息 */
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-item:first-child {
+  border-top: none;
+}
+
+.news-date {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--accent-soft);
+  margin-bottom: 0.25rem;
+}
+
+.news-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.news-summary {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.news-empty {
+  padding: 1rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* 圖表 */
+
+.chart-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+  align-self: start;
+}
+
+.chart-frame {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.stat-row div {
+  flex: 1;
+  padding: 0 0.75rem;
+  border-left: 1px solid var(--line);
+}
+
+.stat-row div:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.stat-row dt {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 0.2rem;
+}
+
+.stat-row dd {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.site-footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.site-footer code {
+  color: var(--accent-soft);
+  font-size: 0.82rem;
+}
+
+/* RWD：窄螢幕時改為單欄，消息在上、圖表在下 */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .stat-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .stat-row div {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 0.5rem;
+  }
+  .stat-row div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

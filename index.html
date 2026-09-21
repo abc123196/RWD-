@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資訊看板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>資訊看板</h1>
+    <p class="tagline">最新消息與資料觀測站</p>
+    <p class="today" id="today"></p>
+  </div>
+</header>
+
+<main class="layout">
+
+  <section class="news" aria-label="最新消息">
+    <div class="section-head">
+      <h2>最新消息</h2>
+      <span class="section-note"><span id="news-count">0</span> 則</span>
+    </div>
+    <ul class="news-list" id="news-list">
+      <li class="news-empty">載入中…</li>
+    </ul>
+  </section>
+
+  <section class="chart-panel" aria-label="資料圖表">
+    <div class="section-head">
+      <h2>資料觀測</h2>
+      <span class="section-note" id="chart-status">示範資料</span>
+    </div>
+    <div class="chart-frame">
+      <canvas id="mainChart" height="220"></canvas>
+    </div>
+    <dl class="stat-row" id="stat-row"></dl>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>
+    資料來源：<code>data/news.json</code> 與 <code>data/chart-data.json</code>（目前為示範資料）。
+    未來串接 MySQL 時，只需修改 <code>js/main.js</code> 內的 <code>API_BASE_URL</code>，指向提供 <code>/news</code> 與 <code>/chart-data</code> 的後端 API 即可，前端其餘程式碼不需更動。
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
