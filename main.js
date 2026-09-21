@@ -121,7 +121,7 @@ async function init() {
   statusEl.textContent = API_BASE_URL ? "已連接資料庫" : "示範資料";
 
   try {
-    const news = await fetchJSON("data/news.json", "/news");
+    const news = await fetchJSON("news.json", "/news");
     renderNews(news);
   } catch (err) {
     document.getElementById("news-list").innerHTML =
@@ -130,7 +130,7 @@ async function init() {
   }
 
   try {
-    const chartData = await fetchJSON("data/chart-data.json", "/chart-data");
+    const chartData = await fetchJSON("chart-data.json", "/chart-data");
     renderChart(chartData);
   } catch (err) {
     console.error(err);
